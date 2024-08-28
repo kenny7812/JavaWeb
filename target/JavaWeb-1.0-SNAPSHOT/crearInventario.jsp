@@ -54,7 +54,7 @@
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistema_inventario?user=root&password=100122");
                 st = con.createStatement();
                 st.executeUpdate("INSERT INTO inventario (ID_inventario, Fecha_Registro, Tipo_Movimiento, Producto_ID, Cantidad) VALUES ('"+ID_inventario+"','"+Fecha_Registro+"','"+Tipo_Movimiento+"','"+Producto_ID+"','"+Cantidad+"');");
-                request.getRequestDispatcher("tienda.jsp").forward(request, response);
+                request.getRequestDispatcher("Inventario.jsp").forward(request, response);
             } catch (Exception e) {
                out.print(e);
             }

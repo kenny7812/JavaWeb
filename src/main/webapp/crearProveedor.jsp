@@ -49,7 +49,7 @@
                     con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistema_inventario?user=root&password=100122");
                     st = con.createStatement();
                     st.executeUpdate("INSERT INTO proveedor (ID_Proveedor, Nombre_Empresa, Direccion, Telefono) VALUES ('"+ID_Proveedor+"','"+NombreEmpresa+"','"+Direccion+"','"+Telefono+"');");
-                    request.getRequestDispatcher("tienda.jsp").forward(request, response);
+                    request.getRequestDispatcher("Proveedor.jsp").forward(request, response);
                 } catch (Exception e) {
                    out.print(e);
                 }

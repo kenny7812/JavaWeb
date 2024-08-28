@@ -36,7 +36,7 @@
                         <label for="Cantidad">Cantidad</label>
                         <input type="text" class="form-control" id="Cantidad" value="<%= Cantidad %>" name="Cantidad" placeholder="Cantidad" required="required">
                     </div>
-                    <a href="tienda.jsp" class="btn btn-danger">Cancelar <i class="fa fa-ban" aria-hidden="true"></i></a>
+                    <a href="Inventario.jsp" class="btn btn-danger">Cancelar <i class="fa fa-ban" aria-hidden="true"></i></a>
                     <button type="submit" name="enviar" class="btn btn-primary">Guardar <i class="fa fa-floppy-o" aria-hidden="true"></i></button>
                     <input type="hidden" name="ID_inventario" value="<%= ID_inventario %>" >
                 </form>
@@ -53,7 +53,7 @@
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistema_inventario?user=root&password=100122");
                 st = con.createStatement();
                 st.executeUpdate("UPDATE inventario SET Fecha_Registro='"+Fecha_Registro+"', Tipo_Movimiento='"+Tipo_Movimiento+"', Producto_ID='"+Producto_ID+"', Cantidad='"+Cantidad+"' WHERE ID_inventario='"+ID_inventario+"';");
-                request.getRequestDispatcher("tienda.jsp").forward(request, response);
+                request.getRequestDispatcher("Inventario.jsp").forward(request, response);
             } catch (Exception e) {
                out.print(e);
             }

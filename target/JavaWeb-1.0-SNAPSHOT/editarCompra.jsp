@@ -46,7 +46,7 @@
                             <label for="Proveedor_ID">Proveedor ID</label>
                             <input type="text" class="form-control" id="Proveedor_ID" value="<%= Proveedor_ID %>" name="Proveedor_ID" placeholder="Proveedor ID" required="required">
                         </div>
-                        <a href="tienda.jsp" class="btn btn-danger">Cancelar <i class="fa fa-ban" aria-hidden="true"></i></a>
+                        <a href="Compra.jsp" class="btn btn-danger">Cancelar <i class="fa fa-ban" aria-hidden="true"></i></a>
                         <button type="submit" name="enviar" class="btn btn-primary">Guardar <i class="fa fa-floppy-o" aria-hidden="true"></i></button>
                         <input type="hidden"  name="ID_Compra" value="<%= ID_Compra %>" >
                     </form>
@@ -63,7 +63,7 @@
                     con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistema_inventario?user=root&password=100122");
                     st = con.createStatement();
                     st.executeUpdate("UPDATE compra SET Fecha_Compra='"+Fecha_Compra+"', Numero_Factura='"+Numero_Factura+"', Cantidad_Comprada='"+Cantidad_Comprada+"', Precio_Unitario='"+Precio_Unitario+"', Producto_ID='"+Producto_ID+"', Proveedor_ID='"+Proveedor_ID+"' WHERE ID_Compra='"+ID_Compra+"';");
-                    request.getRequestDispatcher("tienda.jsp").forward(request, response);
+                    request.getRequestDispatcher("Compra.jsp").forward(request, response);
                 } catch (Exception e) {
                    out.print(e);
                 }

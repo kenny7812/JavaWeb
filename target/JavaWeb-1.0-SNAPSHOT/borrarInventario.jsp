@@ -15,7 +15,7 @@
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistema_inventario?user=root&password=100122");
             st=con.createStatement();
             st.executeUpdate("DELETE FROM inventario where ID_inventario='"+request.getParameter("ID_inventario")+"';");
-            request.getRequestDispatcher("tienda.jsp").forward(request, response);
+            request.getRequestDispatcher("Inventario.jsp").forward(request, response);
             } catch (Exception e) {
             out.print(e);
             }

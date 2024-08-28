@@ -31,7 +31,7 @@
                         <label for="telefono">Teléfono</label>
                         <input type="text" class="form-control" id="Telefono" value="<%= Telefono %>" name="Telefono" placeholder="Teléfono" required="required">
                     </div>
-                    <a href="tienda.jsp" class="btn btn-danger">Cancelar <i class="fa fa-ban" aria-hidden="true"></i></a>
+                    <a href="Proveedor.jsp" class="btn btn-danger">Cancelar <i class="fa fa-ban" aria-hidden="true"></i></a>
                     <button type="submit" name="enviar" class="btn btn-primary">Guardar <i class="fa fa-floppy-o" aria-hidden="true"></i></button>
                     <input type="hidden" name="ID_Proveedor" value="<%= ID_Proveedor %>" >
                 </form>
@@ -48,7 +48,7 @@
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistema_inventario?user=root&password=100122");
                 st = con.createStatement();
                 st.executeUpdate("UPDATE proveedor SET Nombre_Empresa='"+Nombre_Empresa+"', Direccion='"+Direccion+"', Telefono='"+Telefono+"' WHERE ID_Proveedor='"+ID_Proveedor+"';");
-                request.getRequestDispatcher("tienda.jsp").forward(request, response);
+                request.getRequestDispatcher("Proveedor.jsp").forward(request, response);
             } catch (Exception e) {
                out.print(e);
             }

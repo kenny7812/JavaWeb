@@ -46,7 +46,7 @@
                         <label for="Precio_Unitario">Precio Unitario</label>
                         <input type="text" class="form-control" id="Precio_Unitario" value="<%= Precio_Unitario %>" name="Precio_Unitario" placeholder="Precio Unitario" required="required">
                     </div>
-                    <a href="tienda.jsp" class="btn btn-danger">Cancelar <i class="fa fa-ban" aria-hidden="true"></i></a>
+                    <a href="Venta.jsp" class="btn btn-danger">Cancelar <i class="fa fa-ban" aria-hidden="true"></i></a>
                     <button type="submit" name="enviar" class="btn btn-primary">Guardar <i class="fa fa-floppy-o" aria-hidden="true"></i></button>
                     <input type="hidden" name="ID_venta" value="<%= ID_venta %>" >
                 </form>
@@ -63,7 +63,7 @@
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistema_inventario?user=root&password=100122");
                 st = con.createStatement();
                 st.executeUpdate("UPDATE venta SET Fecha_Venta='"+Fecha_Venta+"', Numero_Factura='"+Numero_Factura+"', Producto_ID='"+Producto_ID+"', Cliente_ID='"+Cliente_ID+"', Cantidad_Vendida='"+Cantidad_Vendida+"', Precio_Unitario='"+Precio_Unitario+"' WHERE ID_venta='"+ID_venta+"';");
-                request.getRequestDispatcher("tienda.jsp").forward(request, response);
+                request.getRequestDispatcher("Venta.jsp").forward(request, response);
             } catch (Exception e) {
                out.print(e);
             }
